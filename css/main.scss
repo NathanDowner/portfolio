@@ -57,7 +57,7 @@ main {
     a {
       padding: 0.4rem;
 
-      &:hover {
+      &:hover { //the '&' is used to simulate having the : attached to the a like a:hover
         color: $secondary-color;
         
         @include easeOut();
