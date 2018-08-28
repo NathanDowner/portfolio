@@ -37,3 +37,79 @@
     }
   }
 }
+
+//Menu Overlay
+.menu {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  opacity: 0.5;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &-branding, &-nav {// for menu-branding and menu-nav
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; //so there are no scroll bars
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    &.show {
+      //slide in from top
+      transform: translate3d(0, 0, 0);
+      @include easeOut;
+    }
+
+    // a {
+    //   font-size: 2em;
+    //   // display: block;
+    //   margin-bottom: 30px;
+
+    //   &:hover {
+    //     color: $secondary-color;
+    //     @include easeOut;
+    //   }
+    // }
+  }
+
+  // Branding Side
+  &-branding {
+    background: $primary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    &.show {
+      //slide in from bottom
+      transform: translate3d(0, 0, 0);
+      @include easeOut;
+    }
+
+    .portrait {
+      background: url($portrait-img);
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 3px solid $secondary-color;
+    }
+  }
+
+  .nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+  }
+}
