@@ -40,7 +40,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  opacity: 0.9;
+  opacity: 0.5;
   visibility: hidden;
 }
 
@@ -86,18 +86,6 @@
   transition: all 0.5s ease-out;
 }
 
-.menu-nav a {
-  font-size: 2em;
-  display: block;
-  margin-bottom: 30px;
-}
-
-.menu-nav a:hover {
-  color: #eece1a;
-  -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-
 .menu-branding {
   background: #444;
   -webkit-transform: translate3d(0, 100%, 0);
@@ -114,11 +102,18 @@
 }
 
 .menu-branding .portrait {
-  background: url(../img/portrait.jpg);
+  background: url(url(../img/portrait_pixel.png));
   width: 250px;
   height: 250px;
   border-radius: 50%;
   border: 3px solid #eece1a;
+}
+
+.menu .nav-item {
+  -webkit-transform: translate3d(600px, 0, 0);
+          transform: translate3d(600px, 0, 0);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 * {
