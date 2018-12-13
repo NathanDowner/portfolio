@@ -40,7 +40,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  opacity: 0.5;
+  opacity: 0.9;
   visibility: hidden;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .menu-branding .portrait {
-  background: url(url(../img/portrait_pixel.png));
+  background: url(../img/portrait.jpg);
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -114,6 +114,11 @@
           transform: translate3d(600px, 0, 0);
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+
+.menu .nav-item.show {
+  -webkit-transform: translate3d(0px, 0, 0);
+          transform: translate3d(0px, 0, 0);
 }
 
 * {

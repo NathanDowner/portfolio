@@ -43,7 +43,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  opacity: 0.5;
+  opacity: 0.9;
   visibility: hidden;
 
   &.show {
@@ -89,6 +89,7 @@
 
   // Branding Side
   &-branding {
+    // opacity: 1;
     background: $primary-color;
     transform: translate3d(0, 100%, 0);
     @include easeOut;
@@ -100,7 +101,7 @@
     }
 
     .portrait {
-      background: url($portrait-image);
+      background: $portrait-image;
       width: 250px;
       height: 250px;
       border-radius: 50%;
@@ -111,5 +112,9 @@
   .nav-item {
     transform: translate3d(600px, 0, 0);
     @include easeOut;
+
+    &.show {
+      transform: translate3d(0px, 0, 0);
+    }
   }
 }
