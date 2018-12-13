@@ -87,13 +87,14 @@
     // }
   }
 
-  // Branding Side
+  // menu-branding
   &-branding {
     // opacity: 1;
     background: $primary-color;
     transform: translate3d(0, 100%, 0);
     @include easeOut;
 
+    //menu-branding.show
     &.show {
       //slide in from bottom
       transform: translate3d(0, 0, 0);
@@ -114,7 +115,30 @@
     @include easeOut;
 
     &.show {
-      transform: translate3d(0px, 0, 0);
+      //slides in from the right
+      transform: translate3d(0, 0, 0);
     }
+  }
+
+  .nav-link {
+    text-transform: uppercase;
+    font-size: 30px;
+    padding:20px 0;
+    font-weight: 300;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    @include easeOut;
+
+    &:hover, &.current {
+      color:$secondary-color;
+    }
+  }
+}
+
+// delay for each nav item by 0.1s
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
   }
 }
