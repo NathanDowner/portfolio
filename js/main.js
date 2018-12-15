@@ -1,5 +1,7 @@
 window.onload = ()=> {
   //Select DOM Items
+  const pageStatus = document.querySelector('.status');
+  const pageTitle = document.querySelector('title');
 
   const menuBtn = document.querySelector('.menu-btn');
   const menu = document.querySelector('.menu');
@@ -12,6 +14,9 @@ window.onload = ()=> {
   let showMenu = false;
 
   menuBtn.addEventListener('click', toggleMenu);
+  if (pageStatus.dataset.status === 'false')  {
+    alert(`Please note that the ${pageTitle.innerHTML} page is still under construction`);
+  }
 
   function toggleMenu() {
     if (!showMenu) { 
