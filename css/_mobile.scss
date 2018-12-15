@@ -9,7 +9,7 @@
 
 //Tablets 768
 @include mediaMd {
-  main {
+  main#home {
     align-items: center;
     text-align: center;
     
