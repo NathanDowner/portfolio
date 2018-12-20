@@ -13,6 +13,8 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
+
+
 }
 
 //headings
@@ -49,7 +51,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  min-height: calc(100vh - 60px);
 
   .icons {
     margin-top: 1rem;
@@ -71,5 +73,66 @@ main {
       margin-top: 20vh;
     }
   }
+
+  &#about {
+    
+    .about-content {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-areas: "photo bio bio"
+                          "job1 job2 job3";
+      grid-template-columns: repeat(3, 1fr);
+
+      .bio {
+        grid-area: bio;
+
+        &-img {
+          height: 250px;
+          width: 250px;
+          border: 3px solid $secondary-color;
+          margin: auto;
+          border-radius: 50%;
+          grid-area: photo;
+        }
+
+        p {
+          font-size: 1.4rem;
+        }
+      }
+
+      .job {
+        background: lighten($primary-color, 3);
+        padding: 5px 7px;
+        border-bottom: 3px solid $secondary-color;
+
+        &-info {
+          display: flex;
+
+          h4 {
+            margin-right: 20px;
+          }
+
+          h5 {
+            position: relative;
+            top: 2px;
+          }
+        }
+        &-1 {grid-area: job1;}
+        &-2 {grid-area: job2;}
+        &-3 {grid-area: job3;}
+      }
+    }
+
+    
+    
+  }
+
+}
+
+.main-footer {
+  height: 60px;
+  text-align: center;
+  background: darken($primary-color,10);
+  padding: 1rem;
 }
 @import 'mobile';

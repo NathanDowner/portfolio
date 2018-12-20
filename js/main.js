@@ -1,4 +1,4 @@
-window.onload = ()=> {
+window.onload = function() {
   //Select DOM Items
   const pageStatus = document.querySelector('.status');
   const pageTitle = document.querySelector('title');
