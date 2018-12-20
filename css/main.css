@@ -334,13 +334,18 @@ main#about .about-content .job-3 {
     line-height: 1;
     margin-bottom: 1rem;
   }
+  main#about .about-content {
+        grid-template-areas: "photo" "bio" "job1" "job2" "job3";
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 @media screen and (max-width: 500px) {
-  main#home .lg-heading {
+  main#home .lg-heading, main#about .lg-heading {
     font-size: 3rem;
   }
-  main#home .sm-heading {
+  main#home .sm-heading, main#about .sm-heading {
     font-size: 1rem;
   }
   .menu-nav, .menu-branding {
@@ -366,6 +371,9 @@ main#about .about-content .job-3 {
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0);
     font-size: 24px;
+  }
+  main#about {
+    text-align: center;
   }
 }
 /*# sourceMappingURL=main.css.map */
