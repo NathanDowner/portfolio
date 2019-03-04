@@ -20,7 +20,7 @@
   }
 
   main#about {
-    .about-content {
+    div.about-content {
       grid-template-areas: 
       "photo"
       "bio"
@@ -79,4 +79,15 @@
     }
   }
 
+  main#about {
+    .about-content {
+      grid-template-areas: 
+      "photo"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+      grid-template-columns: 1fr;
+    }
+  }
 }

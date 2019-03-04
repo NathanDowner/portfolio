@@ -3,6 +3,8 @@ window.onload = function() {
   const pageStatus = document.querySelector('.status');
   const pageTitle = document.querySelector('title');
 
+  const headingsLg = document.querySelectorAll('.lg-heaading');
+
   const menuBtn = document.querySelector('.menu-btn');
   const menu = document.querySelector('.menu');
   const menuNav = document.querySelector('.menu-nav');
@@ -12,11 +14,16 @@ window.onload = function() {
   //Set Initial State Of Menu
 
   let showMenu = false;
+  // animateHeadings();
 
   menuBtn.addEventListener('click', toggleMenu);
   if (pageStatus.dataset.status === 'false')  {
     alert(`Please note that the ${pageTitle.innerHTML} page is still under construction`);
   }
+
+  // function animateHeadings() {
+  //   headingsLg.forEach(heading => heading.classList.add("animated", "slideInLeft"));
+  // }
 
   function toggleMenu() {
     if (!showMenu) { 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/main.css" type="text/css">
 		<script type="text/javascript" src="js/main.js"></script>
@@ -31,14 +32,14 @@
 		</header>
 
 		<main id="about">
-			<h1 class="lg-heading">About <span class="text-secondary">Me</span></h1>
+			<h1 class="lg-heading animated slideInLeft">About <span class="text-secondary">Me</span></h1>
 			<h2 class="sm-heading">But just a snapshot</h2>
 
 			<div class="about-content">
 				<img class="bio-img"src="img/portriat_me.jpg" alt="Nathan Downer">
 				<div class="bio">
 					<h3 class="text-secondary">BIO</h3>
-					<p>Hi, I'm Nathan. I'm currently a student at The Univeristy of the West Indies Mona pursuing a degree in Computer Science. I love exploring the world of tech and learning new technologies. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eius esse quas, expedita sapiente voluptates repudiandae doloremque error laudantium mollitia.</p>
+					<p>Hi, I'm Nathan. I'm currently a student at The Univeristy of the West Indies Mona pursuing a degree in Computer Science. I love exploring the world of tech and learning new technologies.</p>
 				</div>
 
 				<div class="job job-1">
@@ -75,5 +76,14 @@
 		<footer class="main-footer">
 			<h3>&copy; 2018</h3>
 		</footer>
+		<script>
+			const jobs = document.querySelectorAll('.job');
+			jobs.forEach(j => {
+				j.classList.add("animated", "zoomIn",);
+		
+
+
+			});
+		</script>
 	</body>
 </html>
