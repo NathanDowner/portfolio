@@ -1,3 +1,23 @@
+@-webkit-keyframes slide-subTitle {}@keyframes slide-subTitle {}@-webkit-keyframes slide-title {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}@keyframes slide-title {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 .menu-btn {
   position: absolute;
   top: 35px;
@@ -224,8 +244,27 @@ main {
   min-height: calc(100vh - 60px);
 }
 
+main .lg-heading {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation: slideTitle 1s ease-in forwards;
+          animation: slideTitle 1s ease-in forwards;
+}
+
+main .sm-heading {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  -webkit-animation: slide-SubTitle 1s cubic-bezier(0.1, 0.46, 0.76, 1.11) forwards;
+          animation: slide-SubTitle 1s cubic-bezier(0.1, 0.46, 0.76, 1.11) forwards;
+}
+
 main .icons {
   margin-top: 1rem;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-animation: slide-icons 1s ease-in forwards;
+          animation: slide-icons 1s ease-in forwards;
 }
 
 main .icons a {
@@ -323,6 +362,76 @@ main#about .about-content .job-3 {
   padding: 1rem;
 }
 
+@-webkit-keyframes slideTitle {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slideTitle {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-SubTitle {
+  from {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-SubTitle {
+  from {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-icons {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide-icons {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 @media screen and (max-width: 792px) {
   main#home {
     -webkit-box-align: center;
@@ -334,7 +443,7 @@ main#about .about-content .job-3 {
     line-height: 1;
     margin-bottom: 1rem;
   }
-  main#about .about-content {
+  main#about div.about-content {
         grid-template-areas: "photo" "bio" "job1" "job2" "job3";
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;

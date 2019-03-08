@@ -4,10 +4,33 @@ $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $portrait-image: url(../img/portriat_me.jpg);
 $background-opacity: 0.8;
+$easing: cubic-bezier(.1,.46,.76,1.11);
 
 @mixin easeOut {
   //takes 3 paramiters, 1:transitionable item 2:duration 3:transition effectzzz
   transition: all 0.5s ease-out;
+}
+
+@mixin fadeInUp {
+  animation: slide-subTitle 1s ease-in forwards;
+}
+
+@keyframes slide-subTitle {
+ 
+}
+
+@mixin slideRight {
+  animation: slide-title 1s ease-in forwards;
+  transform: translateX(-100%);
+}
+
+@keyframes slide-title {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @mixin background {

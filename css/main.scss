@@ -53,9 +53,23 @@ main {
   padding: 4rem;
   min-height: calc(100vh - 60px);
 
+  .lg-heading {
+    transform: translateX(-100%);
+    animation: slideTitle 1s ease-in forwards;
+  }
+
+  .sm-heading {
+    opacity: 0;
+    transform: translateY(50%);
+    animation: slide-SubTitle 1s $easing forwards;
+  }
+
+  
   .icons {
     margin-top: 1rem;
-
+    transform: translateX(100%);
+    animation: slide-icons 1s ease-in forwards;
+    
     a {
       padding: 0.4rem;
 
@@ -66,7 +80,7 @@ main {
       }
     }
   }
-
+  
   &#home {
     overflow: hidden; //makes for no scroll bars
     h1 {
@@ -80,9 +94,9 @@ main {
       display: grid;
       grid-gap: 30px;
       grid-template-areas: "photo bio bio"
-                          "job1 job2 job3";
+      "job1 job2 job3";
       grid-template-columns: repeat(3, 1fr);
-
+      
       .bio {
         grid-area: bio;
 
@@ -122,12 +136,7 @@ main {
         &-3 {grid-area: job3;}
       }
     }
-    
-
-    
-    
   }
-
 }
 
 .main-footer {
@@ -136,4 +145,34 @@ main {
   background: darken($primary-color,10);
   padding: 1rem;
 }
+
+
+
+//Animations//
+@keyframes slideTitle {
+  from {
+    transform: translateX(-100%);
+  } to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-SubTitle {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  } to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-icons {
+  from {
+    transform: translateX(100%);
+  } to {
+    transform: translateX(0);
+  }
+}
+
 @import 'mobile';
