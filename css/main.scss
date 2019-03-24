@@ -89,6 +89,7 @@ main {
   }
 
   &#about {
+    overflow: hidden;
     
     .about-content {
       display: grid;
@@ -118,6 +119,10 @@ main {
         background: lighten($primary-color, 3);
         padding: 5px 7px;
         border-bottom: 3px solid $secondary-color;
+        transform: scale(0.2);
+        opacity: 0;
+        animation: showJobs 1s $easing forwards;
+        transition: transform .2s;
 
         &-info {
           display: flex;
@@ -131,9 +136,25 @@ main {
             top: 2px;
           }
         }
-        &-1 {grid-area: job1;}
-        &-2 {grid-area: job2;}
-        &-3 {grid-area: job3;}
+
+        &-1 {
+          grid-area: job1;
+        }
+
+        &-2 {
+          grid-area: job2;
+          animation-delay: 0.2s;
+        }
+
+        &-3 {
+          grid-area: job3;
+          animation-delay: 0.4s;
+        }
+
+        &:hover {
+          transform: scale(1.2);
+          z-index: 3;
+        }
       }
     }
   }
@@ -162,7 +183,7 @@ main {
     transform: translateY(50%);
     opacity: 0;
   } to {
-    transform: translateY(0);
+    transform: translateY(0%);
     opacity: 1;
   }
 }
@@ -171,7 +192,18 @@ main {
   from {
     transform: translateX(100%);
   } to {
-    transform: translateX(0);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes showJobs {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 

@@ -285,6 +285,10 @@ main#home h1 {
   margin-top: 20vh;
 }
 
+main#about {
+  overflow: hidden;
+}
+
 main#about .about-content {
   display: -ms-grid;
   display: grid;
@@ -320,6 +324,15 @@ main#about .about-content .job {
   background: #4c4c4c;
   padding: 5px 7px;
   border-bottom: 3px solid #eece1a;
+  -webkit-transform: scale(0.2);
+          transform: scale(0.2);
+  opacity: 0;
+  -webkit-animation: showJobs 1s cubic-bezier(0.1, 0.46, 0.76, 1.11) forwards;
+          animation: showJobs 1s cubic-bezier(0.1, 0.46, 0.76, 1.11) forwards;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
 }
 
 main#about .about-content .job-info {
@@ -347,12 +360,22 @@ main#about .about-content .job-2 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: job2;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
 main#about .about-content .job-3 {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: job3;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+main#about .about-content .job:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  z-index: 3;
 }
 
 .main-footer {
@@ -391,8 +414,8 @@ main#about .about-content .job-3 {
     opacity: 0;
   }
   to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
     opacity: 1;
   }
 }
@@ -404,8 +427,8 @@ main#about .about-content .job-3 {
     opacity: 0;
   }
   to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
     opacity: 1;
   }
 }
@@ -416,8 +439,8 @@ main#about .about-content .job-3 {
             transform: translateX(100%);
   }
   to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 
@@ -427,8 +450,34 @@ main#about .about-content .job-3 {
             transform: translateX(100%);
   }
   to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes showJobs {
+  from {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes showJobs {
+  from {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
   }
 }
 
